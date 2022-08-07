@@ -7,7 +7,7 @@
 	<groupId>com.testing</groupId>
 	<artifactId>spring-boot-hello-world</artifactId>
 	<version>1.0.0</version>
-	<packaging>war</packaging>
+	<packaging>jar</packaging>
 
 	<name>spring-boot-hello-world</name>
 	<description>Spring Boot Hello World</description>
