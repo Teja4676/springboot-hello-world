@@ -15,6 +15,12 @@ pipeline {
                 
             }
         }
+        stage('Junit results') {
+            steps {
+                echo 'publishing the results'
+                sh "junit 'target/surefire-reports/*.xml'"
+            }
+        }
         stage('Docker Build') {
             steps {
                 echo 'Docker image building'
