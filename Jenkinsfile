@@ -15,16 +15,16 @@ pipeline {
                 
             }
         }
-        stage('Junit results') {
-            steps {
-                echo 'publishing the results'
-                sh "junit 'target/surefire-reports/*.xml'"
-            }
-        }
         stage('Docker Build') {
             steps {
                 echo 'Docker image building'
                 sh 'docker build -t teja4676/spring-boot-hello-world .'
+            }
+        }
+        stage('Docker Image Push') {
+            steps {
+                echo 'Docker image push'
+                sh 'docker push teja4676/spring-boot-hello-world'
             }
         }
     }
