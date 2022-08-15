@@ -34,7 +34,7 @@ pipeline {
             steps {
                 echo "Deploying on Dev - Ubuntu machine"
 		            sshagent(['Ubuntuserver']) {
-		     	          sh "ssh -o StrictHostKeyChecking=no ubuntu@172.31.93.102 docker run -d teja4676/spring-boot-hello-world "
+		     	          sh "ssh -o StrictHostKeyChecking=no ubuntu@172.31.89.125 docker run -d teja4676/spring-boot-hello-world "
                 }
             }
 	 }
