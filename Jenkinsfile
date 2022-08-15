@@ -15,6 +15,11 @@ pipeline {
                 
             }
         }
-        
+        stage('Docker Build') {
+            steps {
+                echo 'Docker image building'
+                sh 'docker build -t teja4676/spring-boot-hello-world'
+            }
         }
     }
+}
