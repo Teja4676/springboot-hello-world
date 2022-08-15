@@ -29,7 +29,7 @@ pipeline {
         }
         stage('Deploying the Docker Image') {
 		when {
-			branch 'master'
+			branch 'Dev'
 		}
             steps {
                 echo "Deploying on Ubuntu machine"
