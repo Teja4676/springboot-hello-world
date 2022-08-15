@@ -30,9 +30,9 @@ pipeline {
         stage('Deploying the Docker Image') {
             steps {
                 echo "Deploying on Dev - Ubuntu machine"
-		def dockerRun = "docker run -d teja4676/spring-boot-hello-world"
-		sshagent(['Ubuntuserver']) {
-		     	sh "ssh -o StrictHostKeyChecking=no ubuntu@172.31.93.102 ${dockerRun} "
+			def dockerRun = "docker run -d teja4676/spring-boot-hello-world"
+			sshagent(['Ubuntuserver']) {
+		     		sh "ssh -o StrictHostKeyChecking=no ubuntu@172.31.93.102 ${dockerRun} "
                 }
             }
 	}
