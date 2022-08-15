@@ -28,6 +28,9 @@ pipeline {
             }
         }
         stage('Deploying the Docker Image') {
+		when {
+			branch 'master'
+		}
             steps {
                 echo "Deploying on Dev - Ubuntu machine"
 		sshagent(['Ubuntuserver']) {
