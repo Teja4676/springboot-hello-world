@@ -32,7 +32,7 @@ pipeline {
 			branch 'Prod'
 		}
             steps {
-                echo "Deploying on Dev - Ubuntu machine"
+                echo "Deploying on Prod Ubuntu machine"
 		            sshagent(['Ubuntuserver']) {
 		     	          sh "ssh -o StrictHostKeyChecking=no ubuntu@172.31.89.125 docker run -d teja4676/spring-boot-hello-world "
                 }
