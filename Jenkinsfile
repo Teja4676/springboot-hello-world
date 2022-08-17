@@ -12,9 +12,13 @@ pipeline {
             steps {
                 echo 'Building'
                 sh 'mvn package'
-                
             }
         }
+	post { 
+        always { 
+          junit 'target/surefire-reports/*.xml'   
+        }
+    }
         stage('Docker Build') {
             steps {
                 echo 'Docker image building'
