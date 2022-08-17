@@ -18,13 +18,13 @@ pipeline {
         stage('Docker Build') {
             steps {
                 echo 'Docker image building'
-                sh 'docker build -t teja4676/spring-boot-hello-world .'
+                sh 'docker build -t teja4676/spring-boot-hello-world:test .'
             }
         }
         stage('Docker Image Push') {
             steps {
                 echo 'Docker image push'
-                sh 'docker push teja4676/spring-boot-hello-world'
+                sh 'docker push teja4676/spring-boot-hello-world:test'
             }
         }
         stage('Deploying the Docker Image') {
@@ -34,7 +34,7 @@ pipeline {
             steps {
                 echo "Deploying on Dev - Ubuntu machine"
 		sshagent(['Ubuntuserver']) {
-		     	sh "ssh -o StrictHostKeyChecking=no ubuntu@172.31.25.8 docker run -d teja4676/spring-boot-hello-world "
+		     	sh "ssh -o StrictHostKeyChecking=no ubuntu@172.31.25.8 docker run -d teja4676/spring-boot-hello-world:test "
                 }
             }
 	}
