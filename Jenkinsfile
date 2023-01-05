@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('SCM') {
             steps {
-                echo 'code updated.'
+                echo 'code updated..'
                 git 'https://github.com/Teja4676/springboot-hello-world.git'
                 
             }
