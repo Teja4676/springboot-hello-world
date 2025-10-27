@@ -40,16 +40,22 @@
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-test</artifactId>
-			<scope>test</scope>
-			<exclusions>
-				<exclusion>
-					<groupId>com.vaadin.external.google</groupId>
-					<artifactId>android-json</artifactId>
-				</exclusion>
-			</exclusions>
+    		<groupId>org.springframework.boot</groupId>
+    		<artifactId>spring-boot-starter-test</artifactId>
+    		<scope>test</scope>
+    		<exclusions>
+        		<exclusion>
+            		<groupId>com.vaadin.external.google</groupId>
+            		<artifactId>android-json</artifactId>
+        		</exclusion>
+        <!-- Add this exclusion to fix the build -->
+        		<exclusion>
+            		<groupId>org.openjfx</groupId>
+            		<artifactId>javafx.base</artifactId>
+        		</exclusion>
+    		</exclusions>
 		</dependency>
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
